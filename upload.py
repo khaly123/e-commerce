@@ -1,5 +1,4 @@
 # upload.py
-
 import subprocess
 
 def run_command(command):
@@ -11,17 +10,14 @@ def run_command(command):
 def main():
     print("🔧 GitHub Push Script with Manual Commit Message")
 
-    # Step 1: Stage all changes
     print("📁 Adding all files...")
     run_command(["git", "add", "."])
 
-    # Step 2: Let user input commit message in terminal editor
     print("📝 Opening editor for commit message...")
-    run_command(["git", "commit"])  # opens default editor
+    run_command(["git", "commit"])  # Opens your default Git editor
 
-    # Step 3: Push to GitHub
-    print("🚀 Pushing to origin...")
-    run_command(["git", "push", "origin"])
+    print("🚀 Pushing to origin/master...")
+    run_command(["git", "push", "--set-upstream", "origin", "master"])
 
     print("✅ Push complete!")
 
