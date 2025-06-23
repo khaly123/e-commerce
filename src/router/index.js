@@ -7,6 +7,7 @@ import ProductsView from '@/views/ProductsView.vue'
 import SignUpView from '@/views/SignUpView.vue'
 import ProfileView from '@/views/ProfileView.vue'
 import CheckoutView from '@/views/CheckoutView.vue'
+import ForgotPasswordView from '@/views/ForgotPasswordView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -20,7 +21,8 @@ const router = createRouter({
     { path: '/products', name: 'Products', component: ProductsView },
     { path: '/signup', name: 'Signup', component: SignUpView },
     { path: '/profile', name: 'Profile', component: ProfileView },
-    { path: '/checkout', name: 'Checkout', component: CheckoutView }
+    { path: '/checkout', name: 'Checkout', component: CheckoutView },
+    { path: '/forgot-password', name: 'ForgotPassword',component:ForgotPasswordView },
   ],
   scrollBehavior() {
     return { top: 0 }

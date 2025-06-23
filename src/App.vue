@@ -1,13 +1,13 @@
 <template>
   <div class="min-h-screen bg-gray-100 text-gray-900 flex flex-col">
-    <!-- Show Navbar only if not on login or signup pages -->
+    <!-- Conditionally show Navbar -->
     <Navbar v-if="!hideLayout" />
 
     <main class="flex-grow">
       <router-view />
     </main>
 
-    <!-- Show Footer only if not on login or signup pages -->
+    <!-- Conditionally show Footer -->
     <Footer v-if="!hideLayout" />
   </div>
 </template>
@@ -22,9 +22,11 @@ import 'aos/dist/aos.css'
 
 const route = useRoute()
 
-// List of routes where Navbar and Footer should be hidden
+// Set of route names where layout (Navbar & Footer) should be hidden
+const hiddenRoutes = new Set(['login', 'signup', 'forgotpassword'])
+
 const hideLayout = computed(() =>
-  ['login', 'signup'].includes(route.name?.toLowerCase())
+  hiddenRoutes.has(route.name?.toLowerCase())
 )
 
 onMounted(() => {

@@ -40,7 +40,10 @@
 
       <!-- Links -->
       <div class="mt-4 flex justify-between text-sm text-gray-500">
-        <a href="#" class="hover:underline">Forgot password?</a>
+        <router-link to="/forgot-password" class="text-sm text-[#780000] hover:underline">
+  Forgot Password?
+</router-link>
+
         <button type="button" class="hover:underline" @click="goToSignup">
           Create account
         </button>
